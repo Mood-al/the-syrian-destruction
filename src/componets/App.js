@@ -5,17 +5,24 @@ import Header from "./Header";
 import Input from "./Input";
 import ImageGrid from "./ImageGrid";
 import Modal from "./Modal";
+import Mode from "./Mode";
 const App = () => {
   const context = useContext(AppContext);
-  const { url } = context;
+  const { url, dark } = context;
   return (
-    <div className="container">
-      <Header />
-      <Input />
+    <div
+      className={dark ? "grey darken-4" : null}
+      style={{ paddingBottom: "100px" }}
+    >
+      <div className="container  ">
+        <Mode />
+        <Header />
+        <Input />
 
-      <ImageGrid />
+        <ImageGrid />
 
-      {url && <Modal />}
+        {url && <Modal />}
+      </div>
     </div>
   );
 };

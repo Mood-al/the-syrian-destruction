@@ -69,6 +69,7 @@ label span{
   /* padding controls height, will always be perfectly square regardless of width */
   position: relative;
   opacity: 0.9;
+  cursor: pointer;
 }
 .img-wrapper img{
  /* object-fit: contain; */
@@ -78,6 +79,7 @@ label span{
  position: absolute;
  top: 0;
  left: 0;
+
 }
 .modalImg{
   position: fixed;
@@ -97,4 +99,20 @@ label span{
   max-width: 95%;
   max-height: 95%;
  
+}
+.mode{
+  position: fixed;
+  top: 40px;
+  right: 210px;
+  z-index: 2;
+  background: #42a5f5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+  transition: 1s all linear;
 }

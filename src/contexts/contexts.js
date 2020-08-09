@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const AppContext = React.createContext();
 
@@ -6,6 +6,7 @@ const AppProvider = ({ children }) => {
   const [err, setErr] = useState(null);
   const [file, setFile] = useState(null);
   const [url, setUrl] = useState(null);
+  const [dark, setDark] = useState(intialMode());
   const onInputChange = (file) => {
     let types = ["image/png", "image/jpeg"];
     if (file && types.includes(file.type)) {
@@ -19,11 +20,19 @@ const AppProvider = ({ children }) => {
   const imgUrl = (url) => {
     setUrl(url);
   };
-  const uploadingDone = () => {
-    setFile(null);
-    setErr(null);
-    console.log("done");
+
+  const modeChanger = (val) => {
+    setDark((prevDark) => !prevDark);
+    // intialMode();
   };
+  useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(dark));
+  }, [dark]);
+
+  function intialMode() {
+    const savedMode = JSON.parse(localStorage.getItem("dark"));
+    return savedMode;
+  }
   return (
     <AppContext.Provider
       value={{
@@ -34,7 +43,8 @@ const AppProvider = ({ children }) => {
         setErr,
         url,
         imgUrl,
-        uploadingDone,
+        modeChanger,
+        dark,
       }}
     >
       {children}

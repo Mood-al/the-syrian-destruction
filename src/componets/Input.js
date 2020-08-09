@@ -3,7 +3,7 @@ import { AppContext } from "../contexts/contexts";
 import ProgressBar from "./ProgressBar";
 const Input = () => {
   const val = useContext(AppContext);
-  const { file, err } = val;
+  const { file, err, dark } = val;
   const inputHandeler = (e) => {
     const file = e.target.files[0];
     val.onInputChange(file);
@@ -12,11 +12,14 @@ const Input = () => {
   return (
     <div className="form-container">
       <form>
-        <label>
+        <label className={dark ? " blue lighten-1" : null}>
           <input type="file" onChange={inputHandeler} />
           <span>+</span>
         </label>
-        <span className="center" style={{ display: "block", marginTop: "5px" }}>
+        <span
+          className={dark ? "white-text center" : "center"}
+          style={{ display: "block", marginTop: "5px" }}
+        >
           add an image
         </span>
       </form>
