@@ -6,6 +6,7 @@ import Input from "./Input";
 import ImageGrid from "./ImageGrid";
 import Modal from "./Modal";
 import Mode from "./Mode";
+import Footer from "./Footer";
 const App = () => {
   const context = useContext(AppContext);
   const { url, dark } = context;
@@ -22,6 +23,7 @@ const App = () => {
         <ImageGrid />
 
         {url && <Modal />}
+        <Footer />
       </div>
     </div>
   );
