@@ -102,7 +102,7 @@ label span{
 }
 .mode{
   position: fixed;
-  top: 40px;
+  top: 20px;
   right: 5%;
   z-index: 2;
   background: #42a5f5;
