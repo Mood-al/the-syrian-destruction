@@ -16,6 +16,9 @@ const Footer = () => {
         >
           {"  "} twitter
         </a>
+        <p style={{ paddingTop: "10px", fontSize: "1.02rem" }}>
+          just be a human!
+        </p>
       </span>
       <div className=""></div>
     </div>
