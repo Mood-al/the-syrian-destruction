@@ -12,6 +12,7 @@ const Footer = () => {
         <a
           href="https://twitter.com/aliwi299"
           target="_blank"
+          rel="noopener noreferrer"
           className="pink-text darken-1"
         >
           {"  "} twitter
