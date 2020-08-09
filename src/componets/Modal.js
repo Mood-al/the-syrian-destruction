@@ -19,8 +19,8 @@ const Modal = () => {
       <motion.img
         src={url}
         alt="img"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
+        initial={{ x: -100 }}
+        animate={{ x: 0 }}
       />
     </motion.div>
   );
