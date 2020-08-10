@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import useFirestore from "../hooks/useFirestore";
 import { AppContext } from "../contexts/contexts";
 import "../App.css";
 import Header from "./Header";
@@ -7,9 +8,13 @@ import ImageGrid from "./ImageGrid";
 import Modal from "./Modal";
 import Mode from "./Mode";
 import Footer from "./Footer";
+import Loading from "./Loading";
+
 const App = () => {
   const context = useContext(AppContext);
   const { url, dark } = context;
+  const { docs } = useFirestore("images");
+  console.log(docs);
   return (
     <div
       className={dark ? "grey darken-4" : null}
@@ -20,7 +25,7 @@ const App = () => {
         <Header />
         <Input />
 
-        <ImageGrid />
+        {docs.length !== 0 ? <ImageGrid /> : <Loading />}
 
         {url && <Modal />}
         <Footer />

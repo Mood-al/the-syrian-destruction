@@ -1,5 +1,6 @@
 body{
   font-family: 'Raleway', sans-serif;
+  position: relative;
 
 }
 h4{
@@ -117,13 +118,25 @@ label span{
   transition: 1s all linear;
 }
 .footer{
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   line-height: 15px;
-  text-align: center;
+
+ 
+  position: absolute;
+margin-left: auto;
+margin-right: auto;
+
+left: 0;
+right: 0;
+bottom: 10px;
+text-align: center;
+  
   
 }
 .footer p{
   margin: 0;
+  /* text-align: center; */
+  
 }
 .footer span{
   display: block;
@@ -131,4 +144,14 @@ label span{
 }
 .footer a{
   font-size: 1rem;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+
+}
+.loading img{
+  width: 30%;
 }
