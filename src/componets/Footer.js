@@ -6,8 +6,16 @@ const Footer = () => {
   const { dark } = context;
   return (
     <div className={dark ? "footer white-text" : "footer"}>
-      <p>this app has been made by MooD</p>
-      <span>
+      <p style={{ paddingTop: "10px", fontSize: "1.1rem" }}>
+        {" "}
+        behind any of these pictures there was a story there was fear there were
+        tears and alot of sadness
+      </p>
+      {/* <p style={{ paddingTop: "10px", fontSize: "1.02rem" }}>
+        just be a human!
+      </p> */}
+      <span style={{ marginTop: "15px" }}>
+        <span>this app has been made by MooD</span>
         you can follow me on
         <a
           href="https://twitter.com/aliwi299"
@@ -17,11 +25,7 @@ const Footer = () => {
         >
           {"  "} twitter
         </a>
-        <p style={{ paddingTop: "10px", fontSize: "1.02rem" }}>
-          just be a human!
-        </p>
       </span>
-      <div className=""></div>
     </div>
   );
 };

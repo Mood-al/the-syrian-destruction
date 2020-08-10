@@ -14,7 +14,7 @@ const App = () => {
   const context = useContext(AppContext);
   const { url, dark } = context;
   const { docs } = useFirestore("images");
-  console.log(docs);
+
   return (
     <div
       className={dark ? "grey darken-4" : null}
